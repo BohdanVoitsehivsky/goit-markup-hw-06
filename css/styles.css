@@ -1,6 +1,4 @@
-.hiden {
-  display: none;
-}
+
 * {
   box-sizing: border-box;
 }
@@ -240,6 +238,7 @@ ul {
   pointer-events: none;
   transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
 }
 
 .mobile-menu.is-open {
@@ -247,13 +246,16 @@ ul {
   visibility: visible;
   pointer-events: auto;
 }
-.mobile-menu-container {
+.container.mobile-menu-container {
   position: relative;
   padding-top: 72px;
   padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   height: 100%;
+  align-items: flex-start;
+  padding-left: 0;
+    padding-right: 0;
 }
 .mobile-menu-nav-list {
   display: flex;
@@ -295,6 +297,7 @@ ul {
 }
 
 .mobile-menu-link {
+  
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11111;
@@ -302,15 +305,21 @@ ul {
   color: #2e2f42;
   font-family: "Roboto", sans-serif;
 }
+.mobile-menu-link.studio {
+  color: #404bbf;
+}
 .mobile-menu-link:active {
   color: #404bbf;
+}
+.mobile-client-contact {
+  margin-bottom: 48px;
 }
 
 .mobile-contact-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-bottom: 48px;
+  
 }
 
 .menu-client-contact {
@@ -321,9 +330,14 @@ ul {
   letter-spacing: 0.02em;
   color: #434455;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-style: normal;
 }
 .menu-client-contact:active {
   color: #4d5ae5;
+}
+.menu-client-contact.number {
+  color: #404bbf;
+
 }
 .mobile-soc-icon {
   display: flex;
@@ -479,7 +493,7 @@ ul {
   flex-direction: column;
   gap: 72px;
   padding: 0;
-  padding-top: 96px;
+  
 }
 .feature-icon-container {
   display: none;
@@ -513,6 +527,12 @@ ul {
           row-gap: 72px;
           
         }
+                .info-list-title {
+                  
+                  text-align: left;
+                  
+        
+                }
                 .info-list-item {
                   flex-basis: calc((100% - 24px) / 2);
                 }
@@ -728,7 +748,21 @@ ul {
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 .over-text {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  padding: 40px 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 .portfolio-list {
   padding: 32px 16px;
@@ -777,6 +811,11 @@ ul {
   .portfolio {
       padding: 120px 0;
     }
+                @media screen and (min-width: 1158px) {
+                  .portfolio-item:hover .over-text {
+                    transform: translateY(0);
+                  }
+                }
   
     
   
@@ -831,7 +870,7 @@ ul {
       transform: translateY(0);
     }
 }
-<<<<<<< HEAD
+
 /* footer */
 
 .footer {
@@ -932,7 +971,7 @@ flex-direction: column;
 .email-input {
   border: 1px solid #fff;
   border-radius: 4px;
-  width: 264px;
+  width: 288px;
   height: 40px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   font-weight: 400;
@@ -990,9 +1029,15 @@ flex-direction: column;
       column-gap: 24px;
       row-gap: 72px;
       align-items: center;
-      margin-left: 92px;
+      padding-left: 108;
       
     }
+        .email-input {
+          
+          width: 264px;
+          
+         ;
+        }
         .subscribe-form {
           
           flex-direction: row;
@@ -1020,6 +1065,7 @@ flex-direction: column;
                   display: flex;
                   flex-wrap: nowrap;
                   align-items: baseline;
+                  padding-left: 15px;
                 }
         .footer-logo-box {
           margin-right: 120px;
@@ -1041,6 +1087,8 @@ flex-direction: column;
         }
 
         /* modal */
+
+               
             .modal-overlay {
               position: fixed;
               top: 0;
@@ -1063,7 +1111,9 @@ flex-direction: column;
                           visibility: visible;
                           pointer-events: auto;
                         }
+
                 .modal {
+                  
                   position: absolute;
                   top: 50%;
                   left: 50%;
@@ -1293,6 +1343,7 @@ label {
 
 .modal-input {
   padding-left: 38px;
+  width: 360px;
   
 }
 .modal {
@@ -1310,10 +1361,9 @@ min-height: 584px;}
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-input.area-input {
+  height: 120px;
 }
-=======
+}
 
 
-
-
->>>>>>> 741a012c9f2a27a418638c96ff67f2d06465bf91
